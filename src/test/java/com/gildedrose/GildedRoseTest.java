@@ -105,5 +105,67 @@ class GildedRoseTest {
   } 
 
 
-  
+  /******************************* test sur les branches if ***************************************/
+
+  // test la branche quand la qualité atteint 50 et sellin < 11
+  @Test
+  @DisplayName("Test that the quality < 50")
+  void testQltybranche() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49);
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(50, element.quality, "quality not changed "); // quality augmente au début de if et après elle atteint 50 et n'entre pas dans le if 
+  } 
+
+  // test quand sellin est 11 et c'est Backstage passes
+  @Test
+  @DisplayName("Test la branche de if (items[i].sellIn < 11)")
+  void testBranche2() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 11,39 );
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(40, element.quality, "the sellin not changed"); // ici la qualité est augmenté juste dans le traitement de if précedente
+      // elle n'entre pas dans le traitement de if de sellin car sellin = 11
+  } 
+
+  // test la branche quand la qualité atteint 50 et sellin < 6
+  @Test
+  @DisplayName("Test la branche de if (items[i].quality < 50)")
+  void testBranche4() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 5,49 );
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(50, element.quality, "the quality not changed");
+  } 
+
+  // test la branche quand la qualité est 0
+  @Test
+  @DisplayName("Test la branche de if (items[i].quality > 0)")
+  void testBranche5() {
+    Item element = new Item("foo", 0,0 );
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(0, element.quality, "the quality nul");
+  } 
+
+  // test la branche quand le nom égal à Sulfuras, Hand of Ragnaros et sellin < 0 et quality >0 
+  @Test
+  @DisplayName("Test la branche de if (!items[i].name.equals(\"Sulfuras, Hand of Ragnaros\"))")
+  void testBranche6() {
+    Item element = new Item("Sulfuras, Hand of Ragnaros", -1, 5 );
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(5, element.quality, "the quality not changed");
+  } 
+
+  // test la branche quand la qualité atteitn 50 et quand sellin < 0 et c'est Aged Brie
+  @Test
+  @DisplayName("Test la branche de if (items[i].quality < 50)")
+  void testBranche7() {
+    Item element = new Item("Aged Brie", -1,50 );
+    GildedRose app = new GildedRose(new Item[] {element});
+    app.updateQuality();
+    assertEquals(50, element.quality, "the quality not changed");
+  } 
+
 }
