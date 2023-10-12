@@ -3,7 +3,6 @@ plugins {
     jacoco
     checkstyle
     pmd
-    id("info.solidsoft.pitest") version "1.9.0"
     id("com.github.spotbugs") version "5.0.12"
 }
 

@@ -21,14 +21,14 @@ class GildedRose {
 <span class="fc" id="L21">          items[i].quality = items[i].quality + 1;</span>
 
 <span class="fc bfc" id="L23" title="All 2 branches covered.">          if (items[i].name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
-<span class="pc bpc" id="L24" title="1 of 2 branches missed.">            if (items[i].sellIn &lt; 11) {</span>
-<span class="pc bpc" id="L25" title="1 of 2 branches missed.">              if (items[i].quality &lt; 50) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            if (items[i].sellIn &lt; 11) {</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">              if (items[i].quality &lt; 50) {</span>
 <span class="fc" id="L26">                items[i].quality = items[i].quality + 1;</span>
               }
             }
 
 <span class="fc bfc" id="L30" title="All 2 branches covered.">            if (items[i].sellIn &lt; 6) {</span>
-<span class="pc bpc" id="L31" title="1 of 2 branches missed.">              if (items[i].quality &lt; 50) {</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">              if (items[i].quality &lt; 50) {</span>
 <span class="fc" id="L32">                items[i].quality = items[i].quality + 1;</span>
               }
             }
@@ -43,8 +43,8 @@ class GildedRose {
 <span class="fc bfc" id="L43" title="All 2 branches covered.">      if (items[i].sellIn &lt; 0) {</span>
 <span class="fc bfc" id="L44" title="All 2 branches covered.">        if (!items[i].name.equals(&quot;Aged Brie&quot;)) {</span>
 <span class="fc bfc" id="L45" title="All 2 branches covered.">          if (!items[i].name.equals(&quot;Backstage passes to a TAFKAL80ETC concert&quot;)) {</span>
-<span class="pc bpc" id="L46" title="1 of 2 branches missed.">            if (items[i].quality &gt; 0) {</span>
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">              if (!items[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;)) {</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">            if (items[i].quality &gt; 0) {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">              if (!items[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;)) {</span>
 <span class="fc" id="L48">                items[i].quality = items[i].quality - 1;</span>
               }
             }
@@ -52,7 +52,7 @@ class GildedRose {
 <span class="fc" id="L52">            items[i].quality = items[i].quality - items[i].quality;</span>
           }
         } else {
-<span class="pc bpc" id="L55" title="1 of 2 branches missed.">          if (items[i].quality &lt; 50) {</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">          if (items[i].quality &lt; 50) {</span>
 <span class="fc" id="L56">            items[i].quality = items[i].quality + 1;</span>
           }
         }

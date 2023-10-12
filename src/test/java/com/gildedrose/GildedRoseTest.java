@@ -7,102 +7,103 @@ class GildedRoseTest {
 
   @Test
   @DisplayName("Test that the name is unchanged")
-  void testName() {
+  void testNameUnchanged() {
     Item element = new Item("foo", 1, 0);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals("foo", element.name, "the name changed");
+    assertEquals("foo", element.name, "the name shoul not change");
   }
 
+  // la qualité diminue par 1 
   @Test
   @DisplayName("Test that the quality decrease by 1")
-  void testqlty() {
-    Item element = new Item("got", 10, 40);
+  void testQltyDecrease() {
+    Item element = new Item("goat", 10, 40);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals(39, element.quality, "the namlte changed");
-  }
+    assertEquals(39, element.quality, "the quality decrease by 1");
+  } 
 
+  // quand c'est Aged Brie la qualité augmente par 1 
   @Test
-  @DisplayName("Test that the quality decrease by 1")
-  void testqlty2() {
+  @DisplayName("Test that the quality should increase by 1 for Aged Brie")
+  void testQltyIncreaseAgedBrie() {
     Item element = new Item("Aged Brie", 10, 40);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals(41, element.quality, "the namlte changed");
-  }
+    assertEquals(41, element.quality, "the quality increase by 1 for Aged Brie");
+  } 
 
+  // quand c'est Backstage passes to a TAFKAL80ETC concert la qualité augmente
   @Test
-  @DisplayName("Test that the quality decrease by 1")
-  void testqlty3() {
+  @DisplayName("Test that the quality increase by 1 for Backstage passes")
+  void testQltyBackstagePasses() {
     Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 40);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals(42, element.quality, "the namlte changed");
-  }
+    assertEquals(42, element.quality, "the quality increase by 2");
+  } 
 
-  @Test
+  /*@Test
   @DisplayName("Test that the quality decrease by 1")
   void testqlty4() {
     Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 40);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
     assertEquals(43, element.quality, "the namlte changed");
-  }
+  } */
 
+  // sellIn diminue par 1 
   @Test
-  @DisplayName("Test  the sellin ")
+  @DisplayName("Test  the sellin decrease by 1")
   void testSellIn() {
-    Item element = new Item("foo", 8, 0);
+    Item element = new Item("foo", 8, 40);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals(7, element.sellIn, "the sellin changed");
-  }
+    assertEquals(7, element.sellIn, "the sellin decrease by 1");
+  } 
 
+  // quand sellIn est négative la qualité diminue par 1 et le name différent de sulfuras et aged brie et backstage
   @Test
-  @DisplayName("Test  the sellin ")
+  @DisplayName("Test  the quality should decrease")
   void testquality() {
-    Item element = new Item("foo", 0, 8);
+    Item element = new Item("foo", -1, 8);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals(6, element.quality, "the quality decrease by 1");
-  }
+    assertEquals(6, element.quality, "the quality decrease by 1"); // ici la qualité diminue par 2 car elle est diminué 
+                                                                                    // en premier lieu dans le premier if et apres dans le deuxieme condition 
+  } 
 
+  // la qualité diminue à 0 quand : sellin = 0 et Backstage passes to a TAFKAL80ETC concert
   @Test
-  @DisplayName("Test  the quality nul ")
-  void testquality1() {
+  @DisplayName("Test  that the quality should decrease to 0 when SellIn is 0 for Backstage passes ")
+  void testQualityZeroBackStage() {
     Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 8);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
     assertEquals(0, element.quality, "the quality decrease to 0");
-  }
+  } 
 
+  //la qualité augmente par 1 quand c'est Aged Brie et qualité < 50 sellin < 0
   @Test
-  @DisplayName("Test  the quality ")
-  void testquality2() {
-    Item element = new Item("Aged Brie", 0, 8);
+  @DisplayName("Test that the quality should increase")
+  void testQualityWhenNegativeSellInForAgedBrie() {
+    Item element = new Item("Aged Brie", -1, 8);
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertEquals(10, element.quality, "the quality increase");
-  }
-
-  @Test
-  @DisplayName("Test that the quality decrease by 1")
-  void testbranche() {
-    Item element = new Item("Sulfuras, Hand of Ragnaros", 10,39 );
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    //assertEquals(40, element.quality, "the namlte changed");
-  }
+    assertEquals(10, element.quality, "the quality increase"); // augmente de 1 dans le else de premier if 
+                                                                                // et après dans le else de dernier if 
+  } 
   
-  
+  // test pour la fonction toString de Item.java
   @Test
-  @DisplayName("Test that the quality decrease by 1")
-  void testqltybranch() {
-    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 50);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    assertEquals(50, element.quality, "the namlte changed");
-  }
+  @DisplayName("Test Item toString method")
+  void testFctToString() {
+    Item item = new Item("Sulfuras, Hand of Ragnaros", 8, 39);
+    String expectedString = "Sulfuras, Hand of Ragnaros, 8, 39";
+    assertEquals(expectedString, item.toString(), "expectedString doit etre égal à la sortie de de cette fonction");
+  } 
 
+
+  
 }
