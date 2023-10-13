@@ -186,10 +186,19 @@ class GildedRoseTest {
     // et apres elle atteint la condition sellin =6 elle ne change pas
   }
 
- 
-  
+  // test sur la branche (if (items[i].sellIn < 0) { )
+  @Test
+  @DisplayName("test the sellIn")
+  void testSellInMutation2() {
+      Item element = new Item("item", 1, 40); 
+      GildedRose app = new GildedRose(new Item[]{element});
+      app.updateQuality();
+      assertEquals(39, element.quality, "Quality should not change ");
+      // la qualité est decrementé une fois au premier if 
+      // sellin est decrementé et atteint 0 
+  }  
 
-  
+
   
       
 }
