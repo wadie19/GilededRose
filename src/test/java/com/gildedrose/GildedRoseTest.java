@@ -88,13 +88,15 @@ class GildedRoseTest {
   @Test
   @DisplayName("Test that the quality should increase")
   void testQualityWhenNegativeSellInForAgedBrie() {
-    Item element = new Item("Aged Brie", -1, 8);
+    Item element = new Item("Aged Brie", 0, 8); /////////
     GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
     assertEquals(10, element.quality, "the quality increase"); // augmente de 1 dans le else de premier if 
                                                                                 // et après dans le else de dernier if 
   } 
   
+
+
   // test pour la fonction toString de Item.java
   @Test
   @DisplayName("Test Item toString method")
@@ -168,4 +170,26 @@ class GildedRoseTest {
     assertEquals(50, element.quality, "the quality not changed");
   } 
 
+
+  /*********************** test pour la partie mutation **************************/
+
+
+  // test sur la branche (if (items[i].sellIn < 6) { )
+  @Test
+  @DisplayName("test on the sellIn")
+  void testSellInMutation1() {
+      Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 45); 
+      GildedRose app = new GildedRose(new Item[]{element});
+      app.updateQuality();
+      assertEquals(47, element.quality, "the quality should not change when sellin = 6 ");
+    // qualité augmenté une fois quand la qualité < 50 et une fois quand c'est backstage passes et sellin < 11 
+    // et apres elle atteint la condition sellin =6 elle ne change pas
+  }
+
+ 
+  
+
+  
+  
+      
 }

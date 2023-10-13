@@ -4,6 +4,7 @@ plugins {
     checkstyle
     pmd
     id("com.github.spotbugs") version "5.0.12"
+    id("info.solidsoft.pitest") version "1.9.0"
 }
 
 repositories {
@@ -12,6 +13,14 @@ repositories {
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    testImplementation("org.pitest:pitest-junit5-plugin:1.2.0")
+}
+
+pitest {
+  targetClasses.set(listOf("com.gildedrose.*"))
+  threads.set(4)
+  outputFormats.set(listOf("HTML", "XML"))
+  timestampedReports.set(false)
 }
 
 tasks.test {
