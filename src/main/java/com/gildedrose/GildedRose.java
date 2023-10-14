@@ -13,6 +13,7 @@ class GildedRose {
   public void updateQuality() {
     for (int i = 0; i < items.length; i++) {
       switch (items[i].name) {
+
         //j'ai remarqué que Sulfuras est un objet qu'il n'interagit pas
         case sulfuras :           
             break;
@@ -35,7 +36,16 @@ class GildedRose {
               items[i].quality = items[i].quality - items[i].quality;
             }
             break;
-
+            
+        // pour aged brie la qualité augmente avec la jours de vente 
+        case agedbrie :        
+            addQuality(items[i]);
+            subSellIn(items[i]);
+            if (items[i].sellIn < 0) {
+            addQuality(items[i]);
+            }
+            break;
+            
         //Comportement général pour tous les autres items 
         default :                   
             subQuality(items[i]);
@@ -44,24 +54,6 @@ class GildedRose {
                 subQuality(items[i]);
             }
             break;
-
-        
-
-      }
-      if (!items[i].name.equals(agedbrie)) {
-        
-      } else {
-        if (items[i].quality < 50) {
-          items[i].quality++;
-        }
-      }
-
-      if (items[i].sellIn < 0) {
-        if (!items[i].name.equals(agedbrie)) {
-          
-        } else {
-          addQuality(items[i]);
-        }
       }
     }
   }
