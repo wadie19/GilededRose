@@ -12,11 +12,12 @@ class GildedRose {
 
   public void updateQuality() {
     for (int i = 0; i < items.length; i++) {
+      
       if (!items[i].name.equals(agedbrie)
           && !items[i].name.equals(backstage)) {
         if (items[i].quality > 0) {
           if (!items[i].name.equals(sulfuras)) {
-            items[i].quality = items[i].quality - 1;
+            items[i].quality--;
           }
         }
       } else {
@@ -44,10 +45,11 @@ class GildedRose {
           if (!items[i].name.equals(backstage)) {
             if (items[i].quality > 0) {
               if (!items[i].name.equals(sulfuras)) {
-                items[i].quality = items[i].quality - 1;
+                items[i].quality--;
               }
             }
-          } else {
+          }
+           else {
             items[i].quality = items[i].quality - items[i].quality;
           }
         } else {
@@ -61,6 +63,13 @@ class GildedRose {
   protected void addQuality(Item item) {      
     if (item.quality < 50) {
         item.quality++;
+    }
+  }
+
+  // Une fonction qui enlève 1 à la qualité à un item en question
+  protected void subQuality(Item item) {      
+    if (item.quality > 0) {
+        item.quality--;
     }
   }
 }
