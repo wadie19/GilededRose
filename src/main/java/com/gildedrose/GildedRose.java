@@ -12,7 +12,19 @@ class GildedRose {
 
   public void updateQuality() {
     for (int i = 0; i < items.length; i++) {
-      
+      switch (items[i].name) {
+
+        case sulfuras :          //j'ai remarqué que Sulfuras est un objet qu'il n'interagit pas 
+          break;
+        default :                   //Comportement général pour tous les items restants
+          subQuality(items[i]);
+          subSellIn(items[i]);
+          if(items[i].sellIn < 0) {
+              subQuality(items[i]);
+          }
+          break;
+
+      }
       if (!items[i].name.equals(agedbrie)
           && !items[i].name.equals(backstage)) {
         if (items[i].quality > 0) {
@@ -76,5 +88,5 @@ class GildedRose {
   // Une fonction qui enlève 1 jour de vente
   protected void subSellIn(Item item) {
     item.sellIn--;
-} 
+  } 
 }

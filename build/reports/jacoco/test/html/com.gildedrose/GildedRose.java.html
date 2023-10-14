@@ -12,70 +12,82 @@ class GildedRose {
 
   public void updateQuality() {
 <span class="fc bfc" id="L14" title="All 2 branches covered.">    for (int i = 0; i &lt; items.length; i++) {</span>
-      
-<span class="fc bfc" id="L16" title="All 2 branches covered.">      if (!items[i].name.equals(agedbrie)</span>
-<span class="fc bfc" id="L17" title="All 2 branches covered.">          &amp;&amp; !items[i].name.equals(backstage)) {</span>
-<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (items[i].quality &gt; 0) {</span>
-<span class="fc bfc" id="L19" title="All 2 branches covered.">          if (!items[i].name.equals(sulfuras)) {</span>
-<span class="fc" id="L20">            items[i].quality--;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">      switch (items[i].name) {</span>
+
+        case sulfuras :          //j'ai remarquÃ© que Sulfuras est un objet qu'il n'interagit pas 
+<span class="fc" id="L18">          break;</span>
+        default :                   //Comportement gÃ©nÃ©ral pour tous les items restants
+<span class="fc" id="L20">          subQuality(items[i]);</span>
+<span class="fc" id="L21">          subSellIn(items[i]);</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">          if(items[i].sellIn &lt; 0) {</span>
+<span class="fc" id="L23">              subQuality(items[i]);</span>
+          }
+          break;
+
+      }
+<span class="fc bfc" id="L28" title="All 2 branches covered.">      if (!items[i].name.equals(agedbrie)</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">          &amp;&amp; !items[i].name.equals(backstage)) {</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (items[i].quality &gt; 0) {</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">          if (!items[i].name.equals(sulfuras)) {</span>
+<span class="fc" id="L32">            items[i].quality--;</span>
           }
         }
       } else {
-<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (items[i].quality &lt; 50) {</span>
-<span class="fc" id="L25">          items[i].quality++;</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if (items[i].quality &lt; 50) {</span>
+<span class="fc" id="L37">          items[i].quality++;</span>
 
-<span class="fc bfc" id="L27" title="All 2 branches covered.">          if (items[i].name.equals(backstage)) {</span>
-<span class="fc bfc" id="L28" title="All 2 branches covered.">            if (items[i].sellIn &lt; 11) {</span>
-<span class="fc" id="L29">              addQuality(items[i]);</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">          if (items[i].name.equals(backstage)) {</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">            if (items[i].sellIn &lt; 11) {</span>
+<span class="fc" id="L41">              addQuality(items[i]);</span>
             }
 
-<span class="fc bfc" id="L32" title="All 2 branches covered.">            if (items[i].sellIn &lt; 6) {</span>
-<span class="fc" id="L33">              addQuality(items[i]);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            if (items[i].sellIn &lt; 6) {</span>
+<span class="fc" id="L45">              addQuality(items[i]);</span>
             }
           }
         }
       }
 
-<span class="fc bfc" id="L39" title="All 2 branches covered.">      if (!items[i].name.equals(sulfuras)) {</span>
-<span class="fc" id="L40">        subSellIn(items[i]);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">      if (!items[i].name.equals(sulfuras)) {</span>
+<span class="fc" id="L52">        subSellIn(items[i]);</span>
       }
 
-<span class="fc bfc" id="L43" title="All 2 branches covered.">      if (items[i].sellIn &lt; 0) {</span>
-<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (!items[i].name.equals(agedbrie)) {</span>
-<span class="fc bfc" id="L45" title="All 2 branches covered.">          if (!items[i].name.equals(backstage)) {</span>
-<span class="fc bfc" id="L46" title="All 2 branches covered.">            if (items[i].quality &gt; 0) {</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">              if (!items[i].name.equals(sulfuras)) {</span>
-<span class="fc" id="L48">                items[i].quality--;</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">      if (items[i].sellIn &lt; 0) {</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (!items[i].name.equals(agedbrie)) {</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">          if (!items[i].name.equals(backstage)) {</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">            if (items[i].quality &gt; 0) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">              if (!items[i].name.equals(sulfuras)) {</span>
+<span class="fc" id="L60">                items[i].quality--;</span>
               }
             }
           }
            else {
-<span class="fc" id="L53">            items[i].quality = items[i].quality - items[i].quality;</span>
+<span class="fc" id="L65">            items[i].quality = items[i].quality - items[i].quality;</span>
           }
         } else {
-<span class="fc" id="L56">          addQuality(items[i]);</span>
+<span class="fc" id="L68">          addQuality(items[i]);</span>
         }
       }
     }
-<span class="fc" id="L60">  }</span>
+<span class="fc" id="L72">  }</span>
 
   // Une fonction qui ajoute 1 Ã  la qualitÃ© Ã  un item en question
   protected void addQuality(Item item) {      
-<span class="fc bfc" id="L64" title="All 2 branches covered.">    if (item.quality &lt; 50) {</span>
-<span class="fc" id="L65">        item.quality++;</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">    if (item.quality &lt; 50) {</span>
+<span class="fc" id="L77">        item.quality++;</span>
     }
-<span class="fc" id="L67">  }</span>
+<span class="fc" id="L79">  }</span>
 
   // Une fonction qui enlÃ¨ve 1 Ã  la qualitÃ© Ã  un item en question
   protected void subQuality(Item item) {      
-<span class="nc bnc" id="L71" title="All 2 branches missed.">    if (item.quality &gt; 0) {</span>
-<span class="nc" id="L72">        item.quality--;</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">    if (item.quality &gt; 0) {</span>
+<span class="fc" id="L84">        item.quality--;</span>
     }
-<span class="nc" id="L74">  }</span>
+<span class="fc" id="L86">  }</span>
 
   // Une fonction qui enlÃ¨ve 1 jour de vente
   protected void subSellIn(Item item) {
-<span class="fc" id="L78">    item.sellIn--;</span>
-<span class="fc" id="L79">} </span>
+<span class="fc" id="L90">    item.sellIn--;</span>
+<span class="fc" id="L91">  } </span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

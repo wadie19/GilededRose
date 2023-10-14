@@ -1,24 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2023-10-14T14:53:44" hostname="DELL" time="0.064">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="18" skipped="0" failures="8" errors="0" timestamp="2023-10-14T15:19:11" hostname="DELL" time="0.096">
   <properties/>
-  <testcase name="Test that the quality should increase" classname="com.gildedrose.GildedRoseTest" time="0.026"/>
+  <testcase name="Test that the quality should increase" classname="com.gildedrose.GildedRoseTest" time="0.044">
+    <failure message="org.opentest4j.AssertionFailedError: the quality increase ==&gt; expected: &lt;10&gt; but was: &lt;8&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: the quality increase ==&gt; expected: &lt;10&gt; but was: &lt;8&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.testQualityWhenNegativeSellInForAgedBrie(GildedRoseTest.java:94)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
   <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
-  <testcase name="Test that the quality increase by 1 for Backstage passes" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test  the quality should decrease" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test that the quality increase by 1 for Backstage passes" classname="com.gildedrose.GildedRoseTest" time="0.002">
+    <failure message="org.opentest4j.AssertionFailedError: the quality increase by 2 ==&gt; expected: &lt;42&gt; but was: &lt;41&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: the quality increase by 2 ==&gt; expected: &lt;42&gt; but was: &lt;41&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.testQltyBackstagePasses(GildedRoseTest.java:44)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="Test  the quality should decrease" classname="com.gildedrose.GildedRoseTest" time="0.002">
+    <failure message="org.opentest4j.AssertionFailedError: the quality decrease by 1 ==&gt; expected: &lt;6&gt; but was: &lt;4&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: the quality decrease by 1 ==&gt; expected: &lt;6&gt; but was: &lt;4&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.testquality(GildedRoseTest.java:73)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
   <testcase name="Test that the quality &lt; 50" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="test the quality" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="Test la branche de if (items[i].sellIn &lt; 11)" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="test the quality" classname="com.gildedrose.GildedRoseTest" time="0.002">
+    <failure message="org.opentest4j.AssertionFailedError: Quality increase ==&gt; expected: &lt;49&gt; but was: &lt;48&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Quality increase ==&gt; expected: &lt;49&gt; but was: &lt;48&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.TestQualitymutation3(GildedRoseTest.java:208)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="Test la branche de if (items[i].sellIn &lt; 11)" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
   <testcase name="Test la branche de if (items[i].quality &lt; 50)" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test la branche de if (items[i].quality &gt; 0)" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test la branche de if (!items[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;))" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test la branche de if (items[i].quality &lt; 50)" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test  that the quality should decrease to 0 when SellIn is 0 for Backstage passes" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test that the quality decrease by 1" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="Test that the quality should increase by 1 for Aged Brie" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test  the sellin decrease by 1" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test Item toString method" classname="com.gildedrose.GildedRoseTest" time="0.008"/>
-  <testcase name="test on the sellIn" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="test the sellIn" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test  that the quality should decrease to 0 when SellIn is 0 for Backstage passes" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test that the quality decrease by 1" classname="com.gildedrose.GildedRoseTest" time="0.001">
+    <failure message="org.opentest4j.AssertionFailedError: the quality decrease by 1 ==&gt; expected: &lt;39&gt; but was: &lt;38&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: the quality decrease by 1 ==&gt; expected: &lt;39&gt; but was: &lt;38&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.testQltyDecrease(GildedRoseTest.java:24)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="Test that the quality should increase by 1 for Aged Brie" classname="com.gildedrose.GildedRoseTest" time="0.002">
+    <failure message="org.opentest4j.AssertionFailedError: the quality increase by 1 for Aged Brie ==&gt; expected: &lt;41&gt; but was: &lt;40&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: the quality increase by 1 for Aged Brie ==&gt; expected: &lt;41&gt; but was: &lt;40&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.testQltyIncreaseAgedBrie(GildedRoseTest.java:34)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="Test  the sellin decrease by 1" classname="com.gildedrose.GildedRoseTest" time="0.002">
+    <failure message="org.opentest4j.AssertionFailedError: the sellin decrease by 1 ==&gt; expected: &lt;7&gt; but was: &lt;6&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: the sellin decrease by 1 ==&gt; expected: &lt;7&gt; but was: &lt;6&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.testSellIn(GildedRoseTest.java:63)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="Test Item toString method" classname="com.gildedrose.GildedRoseTest" time="0.013"/>
+  <testcase name="test on the sellIn" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="test the sellIn" classname="com.gildedrose.GildedRoseTest" time="0.004">
+    <failure message="org.opentest4j.AssertionFailedError: Quality should not change  ==&gt; expected: &lt;39&gt; but was: &lt;37&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Quality should not change  ==&gt; expected: &lt;39&gt; but was: &lt;37&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
+	at app//com.gildedrose.GildedRoseTest.testSellInMutation2(GildedRoseTest.java:196)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
