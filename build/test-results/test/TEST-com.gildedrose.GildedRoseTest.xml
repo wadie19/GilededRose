@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2023-10-13T12:19:04" hostname="DELL" time="0.075">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2023-10-14T14:10:11" hostname="DELL" time="0.071">
   <properties/>
-  <testcase name="Test that the quality should increase" classname="com.gildedrose.GildedRoseTest" time="0.031"/>
+  <testcase name="Test that the quality should increase" classname="com.gildedrose.GildedRoseTest" time="0.033"/>
   <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
   <testcase name="Test that the quality increase by 1 for Backstage passes" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test  the quality should decrease" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test  the quality should decrease" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test that the quality &lt; 50" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="test the quality" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="Test la branche de if (items[i].sellIn &lt; 11)" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test la branche de if (items[i].sellIn &lt; 11)" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
   <testcase name="Test la branche de if (items[i].quality &lt; 50)" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test la branche de if (items[i].quality &gt; 0)" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test la branche de if (!items[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;))" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="Test la branche de if (items[i].quality &lt; 50)" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test  that the quality should decrease to 0 when SellIn is 0 for Backstage passes" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test that the quality decrease by 1" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="Test that the quality should increase by 1 for Aged Brie" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="Test la branche de if (!items[i].name.equals(&quot;Sulfuras, Hand of Ragnaros&quot;))" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test la branche de if (items[i].quality &lt; 50)" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test  that the quality should decrease to 0 when SellIn is 0 for Backstage passes" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="Test that the quality decrease by 1" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test that the quality should increase by 1 for Aged Brie" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test  the sellin decrease by 1" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="Test Item toString method" classname="com.gildedrose.GildedRoseTest" time="0.011"/>
+  <testcase name="Test Item toString method" classname="com.gildedrose.GildedRoseTest" time="0.01"/>
   <testcase name="test on the sellIn" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
   <testcase name="test the sellIn" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
