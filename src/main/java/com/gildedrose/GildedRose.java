@@ -37,7 +37,7 @@ class GildedRose {
       }
 
       if (!items[i].name.equals(sulfuras)) {
-        items[i].sellIn = items[i].sellIn - 1;
+        subSellIn(items[i]);
       }
 
       if (items[i].sellIn < 0) {
@@ -72,4 +72,9 @@ class GildedRose {
         item.quality--;
     }
   }
+
+  // Une fonction qui enlève 1 jour de vente
+  protected void subSellIn(Item item) {
+    item.sellIn--;
+} 
 }

@@ -37,7 +37,7 @@ class GildedRose {
       }
 
 <span class="fc bfc" id="L39" title="All 2 branches covered.">      if (!items[i].name.equals(sulfuras)) {</span>
-<span class="fc" id="L40">        items[i].sellIn = items[i].sellIn - 1;</span>
+<span class="fc" id="L40">        subSellIn(items[i]);</span>
       }
 
 <span class="fc bfc" id="L43" title="All 2 branches covered.">      if (items[i].sellIn &lt; 0) {</span>
@@ -72,5 +72,10 @@ class GildedRose {
 <span class="nc" id="L72">        item.quality--;</span>
     }
 <span class="nc" id="L74">  }</span>
+
+  // Une fonction qui enlÃ¨ve 1 jour de vente
+  protected void subSellIn(Item item) {
+<span class="fc" id="L78">    item.sellIn--;</span>
+<span class="fc" id="L79">} </span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
