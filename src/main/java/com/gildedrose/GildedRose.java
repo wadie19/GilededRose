@@ -21,19 +21,15 @@ class GildedRose {
         }
       } else {
         if (items[i].quality < 50) {
-          items[i].quality = items[i].quality + 1;
+          items[i].quality++;
 
           if (items[i].name.equals(backstage)) {
             if (items[i].sellIn < 11) {
-              if (items[i].quality < 50) {
-                items[i].quality = items[i].quality + 1;
-              }
+              addQuality(items[i]);
             }
 
             if (items[i].sellIn < 6) {
-              if (items[i].quality < 50) {
-                items[i].quality = items[i].quality + 1;
-              }
+              addQuality(items[i]);
             }
           }
         }
@@ -55,11 +51,16 @@ class GildedRose {
             items[i].quality = items[i].quality - items[i].quality;
           }
         } else {
-          if (items[i].quality < 50) {
-            items[i].quality = items[i].quality + 1;
-          }
+          addQuality(items[i]);
         }
       }
+    }
+  }
+
+  // Une fonction qui ajoute 1 à la qualité à un item en question
+  protected void addQuality(Item item) {      
+    if (item.quality < 50) {
+        item.quality++;
     }
   }
 }

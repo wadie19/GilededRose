@@ -21,46 +21,47 @@ class GildedRose {
         }
       } else {
 <span class="fc bfc" id="L23" title="All 2 branches covered.">        if (items[i].quality &lt; 50) {</span>
-<span class="fc" id="L24">          items[i].quality = items[i].quality + 1;</span>
+<span class="fc" id="L24">          items[i].quality++;</span>
 
 <span class="fc bfc" id="L26" title="All 2 branches covered.">          if (items[i].name.equals(backstage)) {</span>
 <span class="fc bfc" id="L27" title="All 2 branches covered.">            if (items[i].sellIn &lt; 11) {</span>
-<span class="fc bfc" id="L28" title="All 2 branches covered.">              if (items[i].quality &lt; 50) {</span>
-<span class="fc" id="L29">                items[i].quality = items[i].quality + 1;</span>
-              }
+<span class="fc" id="L28">              addQuality(items[i]);</span>
             }
 
-<span class="fc bfc" id="L33" title="All 2 branches covered.">            if (items[i].sellIn &lt; 6) {</span>
-<span class="fc bfc" id="L34" title="All 2 branches covered.">              if (items[i].quality &lt; 50) {</span>
-<span class="fc" id="L35">                items[i].quality = items[i].quality + 1;</span>
-              }
+<span class="fc bfc" id="L31" title="All 2 branches covered.">            if (items[i].sellIn &lt; 6) {</span>
+<span class="fc" id="L32">              addQuality(items[i]);</span>
             }
           }
         }
       }
 
-<span class="fc bfc" id="L42" title="All 2 branches covered.">      if (!items[i].name.equals(sulfuras)) {</span>
-<span class="fc" id="L43">        items[i].sellIn = items[i].sellIn - 1;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">      if (!items[i].name.equals(sulfuras)) {</span>
+<span class="fc" id="L39">        items[i].sellIn = items[i].sellIn - 1;</span>
       }
 
-<span class="fc bfc" id="L46" title="All 2 branches covered.">      if (items[i].sellIn &lt; 0) {</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (!items[i].name.equals(agedbrie)) {</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">          if (!items[i].name.equals(backstage)) {</span>
-<span class="fc bfc" id="L49" title="All 2 branches covered.">            if (items[i].quality &gt; 0) {</span>
-<span class="fc bfc" id="L50" title="All 2 branches covered.">              if (!items[i].name.equals(sulfuras)) {</span>
-<span class="fc" id="L51">                items[i].quality = items[i].quality - 1;</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">      if (items[i].sellIn &lt; 0) {</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (!items[i].name.equals(agedbrie)) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">          if (!items[i].name.equals(backstage)) {</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">            if (items[i].quality &gt; 0) {</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">              if (!items[i].name.equals(sulfuras)) {</span>
+<span class="fc" id="L47">                items[i].quality = items[i].quality - 1;</span>
               }
             }
           } else {
-<span class="fc" id="L55">            items[i].quality = items[i].quality - items[i].quality;</span>
+<span class="fc" id="L51">            items[i].quality = items[i].quality - items[i].quality;</span>
           }
         } else {
-<span class="fc bfc" id="L58" title="All 2 branches covered.">          if (items[i].quality &lt; 50) {</span>
-<span class="fc" id="L59">            items[i].quality = items[i].quality + 1;</span>
-          }
+<span class="fc" id="L54">          addQuality(items[i]);</span>
         }
       }
     }
-<span class="fc" id="L64">  }</span>
+<span class="fc" id="L58">  }</span>
+
+  // Une fonction qui ajoute 1 Ã  la qualitÃ© Ã  un item en question
+  protected void addQuality(Item item) {      
+<span class="fc bfc" id="L62" title="All 2 branches covered.">    if (item.quality &lt; 50) {</span>
+<span class="fc" id="L63">        item.quality++;</span>
+    }
+<span class="fc" id="L65">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
