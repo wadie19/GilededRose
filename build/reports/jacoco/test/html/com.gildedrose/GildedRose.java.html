@@ -11,49 +11,49 @@ class GildedRose {
 <span class="fc" id="L11">  }</span>
 
   public void updateQuality() {
-<span class="fc bfc" id="L14" title="All 2 branches covered.">    for (int i = 0; i &lt; items.length; i++) {</span>
-<span class="fc bfc" id="L15" title="All 4 branches covered.">      switch (items[i].name) {</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">    for (Item item : items) {</span>
+<span class="fc bfc" id="L15" title="All 4 branches covered.">      switch (item.name) {</span>
+
         //j'ai remarquÃ© que Sulfuras est un objet qu'il n'interagit pas
         case sulfuras :           
-<span class="fc" id="L18">            break;</span>
+<span class="fc" id="L19">            break;</span>
         
         //Les tickets de backsatge ont de la valeur si la date approche et apres elle n'a pas de valeur
         case backstage :         
-<span class="fc" id="L22">            addQuality(items[i]);</span>
+<span class="fc" id="L23">            addQuality(item);</span>
 
-<span class="fc bfc" id="L24" title="All 2 branches covered.">            if (items[i].sellIn &lt; 11) {</span>
-<span class="fc" id="L25">              addQuality(items[i]);</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">            if (item.sellIn &lt; 11) {</span>
+<span class="fc" id="L26">              addQuality(item);</span>
             }
 
-<span class="fc bfc" id="L28" title="All 2 branches covered.">            if (items[i].sellIn &lt; 6) {</span>
-<span class="fc" id="L29">              addQuality(items[i]);</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">            if (item.sellIn &lt; 6) {</span>
+<span class="fc" id="L30">              addQuality(item);</span>
             }
 
-<span class="fc" id="L32">            subSellIn(items[i]);</span>
+<span class="fc" id="L33">            subSellIn(item);</span>
 
-<span class="fc bfc" id="L34" title="All 2 branches covered.">            if (items[i].sellIn &lt; 0) {</span>
-<span class="fc" id="L35">              items[i].quality = items[i].quality - items[i].quality;</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if (item.sellIn &lt; 0) {</span>
+<span class="fc" id="L36">              item.quality = 0;</span>
             }
             break;
+            
         // pour aged brie la qualitÃ© augmente avec la jours de vente 
         case agedbrie :        
-<span class="fc" id="L40">            addQuality(items[i]);</span>
-<span class="fc" id="L41">            subSellIn(items[i]);</span>
-<span class="fc bfc" id="L42" title="All 2 branches covered.">            if (items[i].sellIn &lt; 0) {</span>
-<span class="fc" id="L43">            addQuality(items[i]);</span>
+<span class="fc" id="L42">            addQuality(item);</span>
+<span class="fc" id="L43">            subSellIn(item);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            if (item.sellIn &lt; 0) {</span>
+<span class="fc" id="L45">            addQuality(item);</span>
             }
             break;
+
         //Comportement gÃ©nÃ©ral pour tous les autres items 
         default :                   
-<span class="fc" id="L48">            subQuality(items[i]);</span>
-<span class="fc" id="L49">            subSellIn(items[i]);</span>
-<span class="fc bfc" id="L50" title="All 2 branches covered.">            if(items[i].sellIn &lt; 0) {</span>
-<span class="fc" id="L51">                subQuality(items[i]);</span>
+<span class="fc" id="L51">            subQuality(item);</span>
+<span class="fc" id="L52">            subSellIn(item);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            if(item.sellIn &lt; 0) {</span>
+<span class="fc" id="L54">                subQuality(item);</span>
             }
             break;
-
-        
-
       }
     }
 <span class="fc" id="L59">  }</span>

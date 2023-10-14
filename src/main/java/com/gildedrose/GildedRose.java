@@ -11,8 +11,8 @@ class GildedRose {
   }
 
   public void updateQuality() {
-    for (int i = 0; i < items.length; i++) {
-      switch (items[i].name) {
+    for (Item item : items) {
+      switch (item.name) {
 
         //j'ai remarqué que Sulfuras est un objet qu'il n'interagit pas
         case sulfuras :           
@@ -20,38 +20,38 @@ class GildedRose {
         
         //Les tickets de backsatge ont de la valeur si la date approche et apres elle n'a pas de valeur
         case backstage :         
-            addQuality(items[i]);
+            addQuality(item);
 
-            if (items[i].sellIn < 11) {
-              addQuality(items[i]);
+            if (item.sellIn < 11) {
+              addQuality(item);
             }
 
-            if (items[i].sellIn < 6) {
-              addQuality(items[i]);
+            if (item.sellIn < 6) {
+              addQuality(item);
             }
 
-            subSellIn(items[i]);
+            subSellIn(item);
 
-            if (items[i].sellIn < 0) {
-              items[i].quality = items[i].quality - items[i].quality;
+            if (item.sellIn < 0) {
+              item.quality = 0;
             }
             break;
             
         // pour aged brie la qualité augmente avec la jours de vente 
         case agedbrie :        
-            addQuality(items[i]);
-            subSellIn(items[i]);
-            if (items[i].sellIn < 0) {
-            addQuality(items[i]);
+            addQuality(item);
+            subSellIn(item);
+            if (item.sellIn < 0) {
+            addQuality(item);
             }
             break;
-            
+
         //Comportement général pour tous les autres items 
         default :                   
-            subQuality(items[i]);
-            subSellIn(items[i]);
-            if(items[i].sellIn < 0) {
-                subQuality(items[i]);
+            subQuality(item);
+            subSellIn(item);
+            if(item.sellIn < 0) {
+                subQuality(item);
             }
             break;
       }
