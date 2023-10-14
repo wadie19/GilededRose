@@ -15,18 +15,24 @@ class GildedRose {
       switch (items[i].name) {
         //j'ai remarqué que Sulfuras est un objet qu'il n'interagit pas
         case sulfuras :           
-          break;
+            break;
         
+        
+        //Comportement général pour tous les autres items 
+        default :                   
+            subQuality(items[i]);
+            subSellIn(items[i]);
+            if(items[i].sellIn < 0) {
+                subQuality(items[i]);
+            }
+            break;
+
         
 
       }
       if (!items[i].name.equals(agedbrie)
           && !items[i].name.equals(backstage)) {
-        if (items[i].quality > 0) {
-          if (!items[i].name.equals(sulfuras)) {
-            items[i].quality--;
-          }
-        }
+        
       } else {
         if (items[i].quality < 50) {
           items[i].quality++;
@@ -43,18 +49,10 @@ class GildedRose {
         }
       }
 
-      if (!items[i].name.equals(sulfuras)) {
-        subSellIn(items[i]);
-      }
-
       if (items[i].sellIn < 0) {
         if (!items[i].name.equals(agedbrie)) {
           if (!items[i].name.equals(backstage)) {
-            if (items[i].quality > 0) {
-              if (!items[i].name.equals(sulfuras)) {
-                items[i].quality--;
-              }
-            }
+            
           }
            else {
             items[i].quality = items[i].quality - items[i].quality;
