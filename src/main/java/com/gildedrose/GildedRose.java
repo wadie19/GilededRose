@@ -17,7 +17,25 @@ class GildedRose {
         case sulfuras :           
             break;
         
-        
+        //Les tickets de backsatge ont de la valeur si la date approche et apres elle n'a pas de valeur
+        case backstage :         
+            addQuality(items[i]);
+
+            if (items[i].sellIn < 11) {
+              addQuality(items[i]);
+            }
+
+            if (items[i].sellIn < 6) {
+              addQuality(items[i]);
+            }
+
+            subSellIn(items[i]);
+
+            if (items[i].sellIn < 0) {
+              items[i].quality = items[i].quality - items[i].quality;
+            }
+            break;
+
         //Comportement général pour tous les autres items 
         default :                   
             subQuality(items[i]);
@@ -30,33 +48,17 @@ class GildedRose {
         
 
       }
-      if (!items[i].name.equals(agedbrie)
-          && !items[i].name.equals(backstage)) {
+      if (!items[i].name.equals(agedbrie)) {
         
       } else {
         if (items[i].quality < 50) {
           items[i].quality++;
-
-          if (items[i].name.equals(backstage)) {
-            if (items[i].sellIn < 11) {
-              addQuality(items[i]);
-            }
-
-            if (items[i].sellIn < 6) {
-              addQuality(items[i]);
-            }
-          }
         }
       }
 
       if (items[i].sellIn < 0) {
         if (!items[i].name.equals(agedbrie)) {
-          if (!items[i].name.equals(backstage)) {
-            
-          }
-           else {
-            items[i].quality = items[i].quality - items[i].quality;
-          }
+          
         } else {
           addQuality(items[i]);
         }
