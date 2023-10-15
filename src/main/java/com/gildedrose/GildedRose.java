@@ -5,6 +5,7 @@ class GildedRose {
   static final String sulfuras = "Sulfuras, Hand of Ragnaros";
   static final String backstage = "Backstage passes to a TAFKAL80ETC concert";
   static final String agedbrie = "Aged Brie";
+  static final String conjured = "Conjured Mana Cake";
 
 
   public GildedRose(Item[] items) {
@@ -46,7 +47,15 @@ class GildedRose {
             addQuality(item);
             }
             break;
-
+        
+        // Ajout cas Conjured
+        case conjured: 
+            subQualityConjured(item); // Diminue la qualité deux fois plus vite que les éléments normaux
+            subSellIn(item);
+            if (item.sellIn < 0) {
+              subQualityConjured(item); // Diminue la qualité deux fois plus vite quand la sellin est depassé
+            }
+            break;
 
         //Comportement général pour tous les autres items 
         default :                   
@@ -78,4 +87,11 @@ class GildedRose {
   protected void subSellIn(Item item) {
     item.sellIn--;
   } 
+
+  // Une fonction qui réduire la qualité de 2 pour les éléments Conjured
+  protected void subQualityConjured(Item item) {
+    if (item.quality > 0) {
+        item.quality -= 2; 
+    }
+  }
 }

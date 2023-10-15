@@ -5,76 +5,94 @@ class GildedRose {
   static final String sulfuras = &quot;Sulfuras, Hand of Ragnaros&quot;;
   static final String backstage = &quot;Backstage passes to a TAFKAL80ETC concert&quot;;
   static final String agedbrie = &quot;Aged Brie&quot;;
+  static final String conjured = &quot;Conjured Mana Cake&quot;;
 
-<span class="fc" id="L9">  public GildedRose(Item[] items) {</span>
-<span class="fc" id="L10">    this.items = items;</span>
-<span class="fc" id="L11">  }</span>
+
+<span class="fc" id="L11">  public GildedRose(Item[] items) {</span>
+<span class="fc" id="L12">    this.items = items;</span>
+<span class="fc" id="L13">  }</span>
 
   public void updateQuality() {
-<span class="fc bfc" id="L14" title="All 2 branches covered.">    for (Item item : items) {</span>
-<span class="fc bfc" id="L15" title="All 4 branches covered.">      switch (item.name) {</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">    for (Item item : items) {</span>
+<span class="fc bfc" id="L17" title="All 5 branches covered.">      switch (item.name) {</span>
 
         //j'ai remarquÃ© que Sulfuras est un objet qu'il n'interagit pas
         case sulfuras :           
-<span class="fc" id="L19">            break;</span>
+<span class="fc" id="L21">            break;</span>
         
         //Les tickets de backsatge ont de la valeur si la date approche et apres elle n'a pas de valeur
         case backstage :         
-<span class="fc" id="L23">            addQuality(item);</span>
+<span class="fc" id="L25">            addQuality(item);</span>
 
-<span class="fc bfc" id="L25" title="All 2 branches covered.">            if (item.sellIn &lt; 11) {</span>
-<span class="fc" id="L26">              addQuality(item);</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            if (item.sellIn &lt; 11) {</span>
+<span class="fc" id="L28">              addQuality(item);</span>
             }
 
-<span class="fc bfc" id="L29" title="All 2 branches covered.">            if (item.sellIn &lt; 6) {</span>
-<span class="fc" id="L30">              addQuality(item);</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">            if (item.sellIn &lt; 6) {</span>
+<span class="fc" id="L32">              addQuality(item);</span>
             }
 
-<span class="fc" id="L33">            subSellIn(item);</span>
+<span class="fc" id="L35">            subSellIn(item);</span>
 
-<span class="fc bfc" id="L35" title="All 2 branches covered.">            if (item.sellIn &lt; 0) {</span>
-<span class="fc" id="L36">              item.quality = 0;</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">            if (item.sellIn &lt; 0) {</span>
+<span class="fc" id="L38">              item.quality = 0;</span>
             }
             break;
             
         // pour aged brie la qualitÃ© augmente avec la jours de vente 
         case agedbrie :        
-<span class="fc" id="L42">            addQuality(item);</span>
-<span class="fc" id="L43">            subSellIn(item);</span>
-<span class="fc bfc" id="L44" title="All 2 branches covered.">            if (item.sellIn &lt; 0) {</span>
-<span class="fc" id="L45">            addQuality(item);</span>
+<span class="fc" id="L44">            addQuality(item);</span>
+<span class="fc" id="L45">            subSellIn(item);</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">            if (item.sellIn &lt; 0) {</span>
+<span class="fc" id="L47">            addQuality(item);</span>
+            }
+            break;
+        
+        // Ajout cas Conjured
+        case conjured: 
+<span class="fc" id="L53">            subQualityConjured(item); // Diminue la qualitÃ© deux fois plus vite que les Ã©lÃ©ments normaux</span>
+<span class="fc" id="L54">            subSellIn(item);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            if (item.sellIn &lt; 0) {</span>
+<span class="fc" id="L56">              subQualityConjured(item); // Diminue la qualitÃ© deux fois plus vite quand la sellin est depassÃ©</span>
             }
             break;
 
         //Comportement gÃ©nÃ©ral pour tous les autres items 
         default :                   
-<span class="fc" id="L51">            subQuality(item);</span>
-<span class="fc" id="L52">            subSellIn(item);</span>
-<span class="fc bfc" id="L53" title="All 2 branches covered.">            if(item.sellIn &lt; 0) {</span>
-<span class="fc" id="L54">                subQuality(item);</span>
+<span class="fc" id="L62">            subQuality(item);</span>
+<span class="fc" id="L63">            subSellIn(item);</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">            if(item.sellIn &lt; 0) {</span>
+<span class="fc" id="L65">                subQuality(item);</span>
             }
             break;
       }
     }
-<span class="fc" id="L59">  }</span>
+<span class="fc" id="L70">  }</span>
 
   // Une fonction qui ajoute 1 Ã  la qualitÃ© Ã  un item en question
   protected void addQuality(Item item) {      
-<span class="fc bfc" id="L63" title="All 2 branches covered.">    if (item.quality &lt; 50) {</span>
-<span class="fc" id="L64">        item.quality++;</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">    if (item.quality &lt; 50) {</span>
+<span class="fc" id="L75">        item.quality++;</span>
     }
-<span class="fc" id="L66">  }</span>
+<span class="fc" id="L77">  }</span>
 
   // Une fonction qui enlÃ¨ve 1 Ã  la qualitÃ© Ã  un item en question
   protected void subQuality(Item item) {      
-<span class="fc bfc" id="L70" title="All 2 branches covered.">    if (item.quality &gt; 0) {</span>
-<span class="fc" id="L71">        item.quality--;</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">    if (item.quality &gt; 0) {</span>
+<span class="fc" id="L82">        item.quality--;</span>
     }
-<span class="fc" id="L73">  }</span>
+<span class="fc" id="L84">  }</span>
 
   // Une fonction qui enlÃ¨ve 1 jour de vente
   protected void subSellIn(Item item) {
-<span class="fc" id="L77">    item.sellIn--;</span>
-<span class="fc" id="L78">  } </span>
+<span class="fc" id="L88">    item.sellIn--;</span>
+<span class="fc" id="L89">  } </span>
+
+  // Une fonction qui rÃ©duire la qualitÃ© de 2 pour les Ã©lÃ©ments Conjured
+  protected void subQualityConjured(Item item) {
+<span class="fc bfc" id="L93" title="All 2 branches covered.">    if (item.quality &gt; 0) {</span>
+<span class="fc" id="L94">        item.quality -= 2; </span>
+    }
+<span class="fc" id="L96">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
