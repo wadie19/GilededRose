@@ -6,6 +6,7 @@ class GildedRose {
   static final String backstage = "Backstage passes to a TAFKAL80ETC concert";
   static final String agedbrie = "Aged Brie";
 
+
   public GildedRose(Item[] items) {
     this.items = items;
   }
@@ -45,6 +46,7 @@ class GildedRose {
             addQuality(item);
             }
             break;
+
 
         //Comportement général pour tous les autres items 
         default :                   

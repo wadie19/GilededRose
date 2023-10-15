@@ -209,8 +209,45 @@ class GildedRoseTest {
       // qualité augmente au début else de premier if quand quality < 50 et quand c'est backstage passes 
       // et une fois quand sellin < 11 et autre fois quand sellin < 6 
   } 
-  
 
+
+  /******************************** tests sur conjured *****************************/
+  
+  @Test
+  public void testQualityConjured() {
+      // une qualité de 10 et un délai de vente de 5
+      Item elementConjured = new Item("Conjured Mana Cake", 5, 10);
+      GildedRose app = new GildedRose(new Item[] {elementConjured});
+      app.updateQuality();
+
+      assertEquals(8, elementConjured.quality, "the quality decrease by 2"); 
+      // Vérifions la qualité a été réduite de 2
+  }
+
+  @Test
+  public void testQualityConjured2() {
+      // une qualité de 0 et un délai de vente de 5
+      Item elementConjured = new Item("Conjured Mana Cake", 5, 0);
+      GildedRose app = new GildedRose(new Item[] {elementConjured});
+      app.updateQuality();
+
+      assertEquals(0, elementConjured.quality, "the quality remain 0");
+      // la qualité reste à 0
+
+  }
+
+  @Test
+  @DisplayName("test the quality for conjured with negative sellin")
+  public void testQualityConjured3() {
+      // une qualité de 10 et un délai de vente de -1
+      Item elementConjured = new Item("Conjured Mana Cake", -1, 10);
+      GildedRose app = new GildedRose(new Item[] {elementConjured});
+      app.updateQuality();
+
+      assertEquals(6, elementConjured.quality, "the quality decreased by 4");
+      // Vérifions la qualité a été réduite de 4 (2 fois plus rapide en raison du délai de vente négatif)
+
+  }
 
   
 }
